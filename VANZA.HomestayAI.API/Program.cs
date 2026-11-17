@@ -18,7 +18,6 @@ builder.Services.AddHttpClient<OllamaService>();
 
 // Application services
 builder.Services.AddScoped<SqlService>();
-builder.Services.AddScoped<SqlValidator>();
 builder.Services.AddScoped<SmartRagService>();
 builder.Services.AddScoped<ChatHistoryService>();
 

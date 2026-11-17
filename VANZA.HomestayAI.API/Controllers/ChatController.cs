@@ -11,20 +11,17 @@ namespace VANZA.HomestayAI.API.Controllers
     {
         private readonly OllamaService _ollama;
         private readonly SqlService _sqlService;
-        private readonly SqlValidator _validator;
         private readonly SmartRagService _rag;
         private readonly ChatHistoryService _chatHistory;
 
         public ChatController(
             OllamaService ollama,
             SqlService sqlService,
-            SqlValidator validator,
             SmartRagService rag,
             ChatHistoryService chatHistory)
         {
             _ollama = ollama;
             _sqlService = sqlService;
-            _validator = validator;
             _rag = rag;
             _chatHistory = chatHistory;
         }
@@ -176,7 +173,7 @@ namespace VANZA.HomestayAI.API.Controllers
                     Console.WriteLine();
                     Console.WriteLine("[4] VALIDATING SQL");
 
-                    bool isValid = _validator.IsValidSelect(generatedSql);
+                    bool isValid = _sqlService.IsValidSelect(generatedSql);
 
                     Console.WriteLine($"[4] Validation result: {isValid}");
 

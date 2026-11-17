@@ -12,7 +12,7 @@ using VANZA.HomestayAI.API.Data;
 namespace VANZA.HomestayAI.API.Migrations
 {
     [DbContext(typeof(VanzaDbContext))]
-    [Migration("20261117143410_InitialCreate")]
+    [Migration("20261117160521_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
