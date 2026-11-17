@@ -8,7 +8,6 @@
         public int Capacity { get; set; }
         public decimal RatePerNight { get; set; }
         public bool IsActive { get; set; } = true;
-
         public List<Booking> Bookings { get; set; } = new();
     }
 }

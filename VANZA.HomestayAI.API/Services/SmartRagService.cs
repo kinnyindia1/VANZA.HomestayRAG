@@ -7,13 +7,10 @@ namespace VANZA.HomestayAI.API.Services
     public class SmartRagService
     {
         private readonly IDocumentSearchService _searchService;
-
-        public SmartRagService(
-            IDocumentSearchService searchService)
+        public SmartRagService(IDocumentSearchService searchService)
         {
             _searchService = searchService;
         }
-
         public async Task<string> AskDocumentsAsync(string question)
         {
             var request = new QueryIntelligenceRequest
@@ -21,10 +18,7 @@ namespace VANZA.HomestayAI.API.Services
                 Query = question,
                 MaxResults = 5
             };
-
-            var response = await _searchService
-                .QueryIntelligenceAsync(request);
-
+            var response = await _searchService.QueryIntelligenceAsync(request);
             return response.Answer;
         }
     }
